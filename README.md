@@ -4,7 +4,7 @@ A network of drifting neurons that connect as they move.
 Move your mouse to gently pull them, and click to fire a note.
 Notes rise in pitch from left to right.
 
-✨ **[See it live](https://editor.p5js.org/danielledefrance/full/ZA2ujsrKt)** · 💻 **[View the code in the p5.js editor](https://editor.p5js.org/danielledefrance/sketches/ZA2ujsrKt)**
+✨ **[See it live](https://danielledefrance.github.io/cognition-meets-code/)** · 💻 **[View the code in the p5.js editor](https://editor.p5js.org/danielledefrance/sketches/ZA2ujsrKt)**
 
 ### How it works
 - Each neuron is an object with its own position, speed, and glow
@@ -14,3 +14,4 @@ Notes rise in pitch from left to right.
 ### Built with
 p5.js · JavaScript · Web Audio API
 
+*My first creative coding sketch, exploring where cognition, art, and music meet.*
