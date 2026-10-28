@@ -11,6 +11,10 @@ const notes = [60, 62, 64, 67, 69, 72, 74, 76, 79];
  
 function setup() {
   createCanvas(windowWidth, windowHeight);
+ 
+  // Stop phones from scrolling or zooming when you touch the sketch
+  document.body.style.overflow = "hidden";
+  document.body.style.touchAction = "none";
   for (let i = 0; i < 55; i++) {
     nodes.push(new Neuron(random(width), random(height)));
   }
@@ -46,10 +50,25 @@ function draw() {
   text("where cognition meets code  ·  move and click", width / 2, height - 24);
 }
  
+// Clicks on a computer
 function mousePressed() {
-  // Browsers require a click before sound can play
+  fireNote();
+}
+ 
+// Taps on a phone (returning false stops the tap from also counting as a click)
+function touchStarted() {
+  fireNote();
+  return false;
+}
+ 
+function fireNote() {
+  // Browsers require a click or tap before sound can play
   if (!audio) {
     audio = new AudioContext();
+  }
+  // Phones sometimes pause the sound engine, so wake it up
+  if (audio.state === "suspended") {
+    audio.resume();
   }
  
   // Left side of the screen plays low notes, right side plays high ones
